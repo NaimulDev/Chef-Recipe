@@ -8,7 +8,7 @@ const Header = () => {
   //   const [cart, setCart] = useContext(CartContext || []);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+    <div className=" px-4 py-2 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="relative flex items-center justify-between">
         <Link
           to="/"
@@ -32,6 +32,16 @@ const Header = () => {
               className={({ isActive }) => (isActive ? "active" : "default")}
             >
               Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/"
+              aria-label="service"
+              title="Service"
+              className={({ isActive }) => (isActive ? "active" : "default")}
+            >
+              Service
             </NavLink>
           </li>
           <li>

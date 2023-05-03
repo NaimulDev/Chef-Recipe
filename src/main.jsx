@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./Home";
+
 import Blog from "./Pages/Blog/Blog";
 import Main from "./Components/Main/Main";
 import Signup from "./Pages/Signup/Signup";
@@ -10,6 +10,7 @@ import Login from "./Pages/Login/Login";
 import About from "./Pages/About/About";
 import AuthProvider from "./Components/providers/AuthProvider";
 import ErrorPage from "./Pages/ErrorPage/ErrorPage";
+import Home from "./Components/Home/Home";
 
 const router = createBrowserRouter([
   {
