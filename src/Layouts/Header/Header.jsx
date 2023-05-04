@@ -34,16 +34,7 @@ const Header = () => {
               Home
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/service"
-              aria-label="service"
-              title="Service"
-              className={({ isActive }) => (isActive ? "active" : "default")}
-            >
-              Service
-            </NavLink>
-          </li>
+
           <li>
             <NavLink
               to="/blog"
