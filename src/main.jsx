@@ -11,6 +11,8 @@ import About from "./Pages/About/About";
 import AuthProvider from "./Components/providers/AuthProvider";
 import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 import Home from "./Components/Home/Home";
+import Service from "./Pages/Service/Service";
+import PrivateRoute from "./Routes/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +22,12 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <Home />,
+        loader: () => fetch("http://localhost:5000/chef"),
+      },
+      {
+        path: "/service",
+        element: <Service />,
       },
       {
         path: "/blog",

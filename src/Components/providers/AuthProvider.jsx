@@ -39,11 +39,11 @@ const AuthProvider = ({ children }) => {
   const gitHubProvider = new GithubAuthProvider();
 
   const googleSignIn = () => {
-    signInWithPopup(auth, googleProvider);
+    return signInWithPopup(auth, googleProvider);
   };
 
   const githubSignIn = () => {
-    signInWithPopup(auth, gitHubProvider);
+    return signInWithPopup(auth, gitHubProvider);
   };
 
   // observer user auth state
