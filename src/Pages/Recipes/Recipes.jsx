@@ -3,25 +3,19 @@ import React from "react";
 // eslint-disable-next-line react/prop-types
 const Recipes = ({ recipe }) => {
   // eslint-disable-next-line react/prop-types
-  const { image_url, like, name, rating, thumbnail_url, title, details } =
-    recipe;
+  const { image, like, name, rating, title, details } = recipe;
+
   return (
-    <div className="flex flex-col md:flex-row items-center">
-      <div className="md:w-1/2">
-        {/* <img src={} alt="Your Image" className="w-full" /> */}
-      </div>
-      <div className="md:w-1/2 md:ml-6 mt-6 md:mt-0">
-        <h2 className="text-2xl font-bold mb-2">Title</h2>
-        <p className="text-gray-700 mb-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel
-          felis ac tellus laoreet placerat. Suspendisse vel sapien in justo
-          fringilla pulvinar.
-        </p>
-        <p className="text-gray-700">
-          Ut vel elit non elit vulputate fermentum. Sed ac faucibus dolor.
-          Nullam vel massa vitae mauris dapibus bibendum eget a velit. Mauris
-          malesuada vestibulum efficitur.
-        </p>
+    <div className="rounded-lg overflow-hidden shadow-md">
+      <img src={image} alt={name} className="w-full h-48 object-cover" />
+      <div className="p-4">
+        <h3 className="text-lg font-bold mb-2">{title}</h3>
+        <p className="text-gray-700 text-base mb-4">{details}</p>
+        <div className="flex items-center">
+          <div className="text-yellow-500 mr-2"></div>
+          <span className="text-gray-700 text-sm">{like}</span>
+          <button className="ml-auto focus:outline-none">loved</button>
+        </div>
       </div>
     </div>
   );

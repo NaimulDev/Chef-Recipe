@@ -1,10 +1,7 @@
 import React from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import Recipes from "./Recipes";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faUtensils } from "@fortawesome/free-solid-svg-icons";
 import "./chef-recipe.css";
-// import "font-awesome/css/font-awesome.min.css";
 
 const ChefRecipes = () => {
   const { id } = useParams();
@@ -16,7 +13,13 @@ const ChefRecipes = () => {
 
   return (
     <div>
-      <h1>Comming Soon Recipes</h1>
+      <div className=" text-center ">
+        <h1 className="text-3xl font-bold">Chef Recipes</h1>
+
+        <Link to="/" className="text-teal-300">
+          Back
+        </Link>
+      </div>
       <section className="px-4 py-8 md:flex md:justify-between md:items-center bg-gray-100">
         <div className="md:w-1/2 md:mr-8">
           <img
@@ -41,9 +44,11 @@ const ChefRecipes = () => {
           </ul>
         </div>
       </section>
-      {recipes.map((recipe) => (
-        <Recipes key={recipe._id} recipe={recipe}></Recipes>
-      ))}
+      <section className="px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {recipes.map((recipe) => (
+          <Recipes key={recipe._id} recipe={recipe}></Recipes>
+        ))}
+      </section>
     </div>
   );
 };
