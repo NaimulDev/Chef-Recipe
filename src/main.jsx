@@ -13,6 +13,7 @@ import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 import Home from "./Components/Home/Home";
 import Service from "./Pages/Service/Service";
 import PrivateRoute from "./Routes/PrivateRoute";
+import Recipes from "./Pages/Recipes/Recipes";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,12 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
         loader: () => fetch("http://localhost:5000/chef"),
+      },
+      {
+        path: "/chef/:id",
+        element: <Recipes />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/chef/${params.id}`),
       },
       {
         path: "/service",

@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const ChefMaster = ({ chef }) => {
   // eslint-disable-next-line react/prop-types
-  const { name, image, experian, like } = chef;
+  const { id, name, image, experian, like } = chef;
 
   return (
     <>
@@ -18,9 +19,12 @@ const ChefMaster = ({ chef }) => {
         </p>
         <p className="text-gray-700 ">Experince: {experian}</p>
         <p className="text-gray-700 font-bold">like: {like}</p>
-        <button type="button" className="btn-primary w-full block">
-          View Recipe
-        </button>
+        <Link
+          to={`/chef/${id}`}
+          className="btn-primary w-full block text-center"
+        >
+          View Recipes
+        </Link>
       </div>
     </>
   );
