@@ -30,7 +30,7 @@ const Login = () => {
         console.log(error);
       });
   };
-
+  // login google and github
   const handleGoogle = () => {
     googleSignIn()
       .then((result) => {
