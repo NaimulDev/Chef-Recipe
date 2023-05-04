@@ -1,12 +1,12 @@
 import React from "react";
 
-import cover1 from "../../assets/images/banner/banner-1.jpg";
+import cover2 from "../../assets/images/banner/banner-2.jpg";
 
 const Banner = () => {
   return (
     <div className="relative h-screen">
       <img
-        src={cover1}
+        src={cover2}
         alt=""
         className="object-cover w-full h-full absolute top-0 left-0 z-0"
       />

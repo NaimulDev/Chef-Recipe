@@ -7,15 +7,20 @@ const ChefMaster = ({ chef }) => {
 
   return (
     <>
-      <div className="justify-center items-center text-center">
-        <div>
-          <img src={image} alt="" />
-        </div>
-        <div>
-          <h3>{name}</h3>
-          <p>{experian}</p>
-          <p>{like}</p>
-        </div>
+      <div className="bg-gray-100 p-6 rounded shadow-lg">
+        <img
+          className="object-cover w-full  rounded shadow-lg mb-6 "
+          src={image}
+          alt=""
+        />
+        <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
+          {name}
+        </p>
+        <p className="text-gray-700 ">Experince: {experian}</p>
+        <p className="text-gray-700 font-bold">like: {like}</p>
+        <button type="button" className="btn-primary w-full block">
+          View Recipe
+        </button>
       </div>
     </>
   );

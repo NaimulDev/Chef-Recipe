@@ -24,11 +24,15 @@ const Home = () => {
       <Banner />
       <SectionTwo />
       <SectionOne />
+
+      {/*  grid grid-cols-3 justify-center mx-auto */}
       <h1 className="text-center text-5xl font-bold">Our Master Chefs</h1>
-      <div className=" grid grid-cols-3 justify-center mx-auto">
-        {chefData.map((chef) => (
-          <ChefMaster key={chef.id} chef={chef}></ChefMaster>
-        ))}
+      <div className="my-container">
+        <div className=" product-container">
+          {chefData.map((chef) => (
+            <ChefMaster key={chef.id} chef={chef}></ChefMaster>
+          ))}
+        </div>
       </div>
     </>
   );
