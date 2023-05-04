@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import "font-awesome/css/font-awesome.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Blog from "./Pages/Blog/Blog";
@@ -13,7 +14,8 @@ import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 import Home from "./Components/Home/Home";
 import Service from "./Pages/Service/Service";
 import PrivateRoute from "./Routes/PrivateRoute";
-import Recipes from "./Pages/Recipes/Recipes";
+
+import ChefRecipes from "./Pages/Recipes/ChefRecipes";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/chef/:id",
-        element: <Recipes />,
+        element: <ChefRecipes />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/chef/${params.id}`),
       },
