@@ -32,7 +32,7 @@ const Footer = () => {
       </div>
       <div className="bg-gray-800 py-4 text-center">
         <p className="text-sm text-gray-500">
-          © 2023 Chef Recipe Inc. All rights reserved.
+          © 2025 Chef Recipe Inc. All rights reserved.
         </p>
       </div>
     </footer>
