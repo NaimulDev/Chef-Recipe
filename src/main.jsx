@@ -41,10 +41,7 @@ const router = createBrowserRouter([
             `https://chef-recipe-hunter-server-phi-five.vercel.app/chef/${params.id}`
           ),
       },
-      {
-        path: "/service",
-        element: <Service />,
-      },
+
       {
         path: "/blog",
         element: <Blog />,
