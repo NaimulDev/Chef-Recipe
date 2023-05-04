@@ -6,7 +6,7 @@ const Signup = () => {
   const [error, setError] = useState("");
   const { createUser, googleSignIn, githubSignIn } = useContext(AuthContext);
   const [show, setShow] = useState(false);
-
+  // email signup
   const handleSignUp = (event) => {
     event.preventDefault();
     const form = event.target;
