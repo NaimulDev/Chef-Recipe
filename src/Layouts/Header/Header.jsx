@@ -152,7 +152,7 @@ const Header = () => {
                   </div>
                 </div>
                 <nav>
-                  <ul className="space-y-4">
+                  <ul className="space-y-4 z-10">
                     <li>
                       <Link
                         to="/blog"

@@ -7,9 +7,8 @@ const ChefRecipes = () => {
   const { id } = useParams();
 
   const recipes = useLoaderData();
-  console.log(recipes[0].thumbnail);
+  console.log(recipes);
   const chef = recipes[0];
-  console.log(chef);
 
   return (
     <div>

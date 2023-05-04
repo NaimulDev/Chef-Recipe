@@ -8,7 +8,7 @@ const Banner = () => {
       <img
         src={cover2}
         alt=""
-        className="object-cover w-full h-full absolute top-0 left-0 z-0"
+        className=" w-full h-full absolute top-0 left-0 "
       />
       <div className="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-70 z-10" />
       <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center z-20">
