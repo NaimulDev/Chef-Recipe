@@ -1,13 +1,19 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Components/providers/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useTitle from "../../useTitle";
+import { Toaster, toast } from "react-hot-toast";
 
 const Signup = () => {
   const [error, setError] = useState("");
   const { createUser, googleSignIn, githubSignIn } = useContext(AuthContext);
   const [show, setShow] = useState(false);
   useTitle("Signup");
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
   // email signup
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -31,6 +37,10 @@ const Signup = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        form.reset();
+        navigate(from, { replace: true });
+        toast.success("Successfully toasted!");
+        // alert("successfully create");
       })
       .catch((error) => {
         console.log(error);
@@ -69,12 +79,14 @@ const Signup = () => {
         <button
           onClick={handleGoogle}
           className="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4  rounded focus:outline-none focus:shadow-outline"
+          type="submit"
         >
           SignIn Google
         </button>
         <button
           onClick={handleGitHub}
           className="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4  rounded focus:outline-none focus:shadow-outline"
+          type="submit"
         >
           SignIn GitHub
         </button>
@@ -159,6 +171,7 @@ const Signup = () => {
           >
             Sign Up
           </button>
+          <Toaster />
         </div>
       </form>
       <p>

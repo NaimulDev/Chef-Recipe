@@ -1,13 +1,12 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-
 import logo from "../../assets/logo.png";
 import { AuthContext } from "../../Components/providers/AuthProvider";
-// import { FaHeart } from "react-icons/fa";
+// import { IoIosContact } from "react-icons/fa";
+import { IoIosContact } from "react-icons/io";
 const Header = () => {
-  //   const [cart, setCart] = useContext(CartContext || []);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const [loginUser, setLOginUser] = useState(null);
+
   const { user, logOut } = useContext(AuthContext);
 
   const handleLogOut = () => {
@@ -54,14 +53,6 @@ const Header = () => {
             </NavLink>
           </li>
 
-          {/* <li>
-            <Link to="/cart" aria-label="Cart" title="Cart">
-              <div className="relative py-3">
-                <ShoppingCartIcon className="h-6 w-6 text-cyan-400" />
-                <p className="absolute bottom-5 left-6">{cart.length}</p>
-              </div>
-            </Link>
-          </li> */}
           <li>
             <NavLink
               to="/about"
@@ -73,14 +64,20 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/signup"
-              aria-label="signup"
-              title="Signup"
-              className={({ isActive }) => (isActive ? "active" : "default")}
-            >
-              Sign UP
-            </NavLink>
+            {user ? (
+              <div className="w-10 h-10 animate-pulse">
+                <IoIosContact className="w-full h-full" />
+              </div>
+            ) : (
+              <NavLink
+                to="/signup"
+                aria-label="signup"
+                title="Signup"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                Sign UP
+              </NavLink>
+            )}
           </li>
           <li>
             {user ? (
@@ -128,8 +125,8 @@ const Header = () => {
                   <div>
                     <Link
                       to="/"
-                      aria-label="HeroGadget"
-                      title="HeroGadget"
+                      aria-label="Mazaa"
+                      title="Mazaa"
                       className="inline-flex items-center"
                     >
                       <div className="flex items-center justify-center w-8 h-8 rounded-full bg-cyan-200">
@@ -168,21 +165,6 @@ const Header = () => {
                         Blog
                       </Link>
                     </li>
-                    {/* <li>
-                      <Link
-                        to="/cart"
-                        aria-label="Cart"
-                        title="Cart"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        <div className="relative py-3">
-                          <ShoppingCartIcon className="h-6 w-6 text-cyan-400" />
-                          <p className="absolute bottom-5 left-6">
-                            {cart.length}
-                          </p>
-                        </div>
-                      </Link>
-                    </li> */}
                     <li>
                       <Link
                         to="/about"

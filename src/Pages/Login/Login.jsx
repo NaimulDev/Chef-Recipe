@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Components/providers/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useTitle from "../../useTitle";
+import { Toaster, toast } from "react-hot-toast";
 
 const Login = () => {
   const [show, setShow] = useState(false);
@@ -26,9 +27,11 @@ const Login = () => {
         console.log(loggedUser);
         form.reset();
         navigate(from, { replace: true });
+        toast.success("Successfully Login..!");
       })
       .catch((error) => {
         console.log(error);
+        toast.error("Login Faild...!");
       });
   };
   // login google and github
@@ -37,10 +40,13 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate(from, { replace: true });
+        toast.success("Successfully Login..!");
       })
       .catch((error) => {
         const errorMessage = error.message;
         console.log(errorMessage);
+        toast.error("Login Faild...!");
       });
   };
 
@@ -49,10 +55,13 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate(from, { replace: true });
+        toast.success("Successfully Login..!");
       })
       .catch((error) => {
         const errorMessage = error.message;
         console.log(errorMessage);
+        toast.error("Login Faild...!");
       });
   };
 
@@ -104,6 +113,7 @@ const Login = () => {
           >
             Sign In
           </button>
+          <Toaster />
         </div>
       </form>
       <div className="flex items-center justify-evenly mb-4">

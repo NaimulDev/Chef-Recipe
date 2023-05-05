@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useState, CSSProperties } from "react";
-// import { AuthContext } from "../components/providers/AuthProvider";
+
 import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../Components/providers/AuthProvider";
 import { ClipLoader } from "react-spinners";
@@ -36,7 +36,7 @@ const PrivateRoute = ({ children }) => {
     return children;
   }
 
-  return <Navigate to="/login" state={{ from: location }} replace></Navigate>;
+  return <Navigate to="/signup" state={{ from: location }} replace></Navigate>;
 };
 
 export default PrivateRoute;
