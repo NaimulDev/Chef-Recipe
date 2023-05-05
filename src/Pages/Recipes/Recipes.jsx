@@ -1,7 +1,9 @@
 import { Rating } from "@smastrom/react-rating";
 import React, { useState } from "react";
 import "@smastrom/react-rating/style.css";
-import { ToastContainer } from "react-toast";
+
+import { FaHeart } from "react-icons/fa";
+import { IconContext } from "react-icons";
 
 // eslint-disable-next-line react/prop-types
 const Recipes = ({ recipe }) => {
@@ -12,7 +14,6 @@ const Recipes = ({ recipe }) => {
   const [ratting, setRatting] = useState(3);
 
   const handleToast = () => {
-    toast("Added");
     alert("added");
     setDisable(true);
   };
@@ -34,8 +35,15 @@ const Recipes = ({ recipe }) => {
               onChange={setRatting}
             />
           </div>
-          <div>
-            <span className="text-gray-700 text-sm">{like}</span>
+          <div className=" inline-flex">
+            <IconContext.Provider
+              value={{ color: "red", className: "global-class-name" }}
+            >
+              <div>
+                <FaHeart />{" "}
+              </div>
+            </IconContext.Provider>
+            <span className="text-gray-700 text-sm ml-2"> {like}</span>
           </div>
         </div>
       </div>
@@ -43,7 +51,6 @@ const Recipes = ({ recipe }) => {
         <button className=" btn-primary w-full" onClick={handleToast}>
           Favorite Food
         </button>
-        <ToastContainer />
       </div>
     </div>
   );

@@ -1,15 +1,9 @@
-// import React, { useEffect } from "react";
-// import { Link } from "react-router-dom";
-
 import SectionTwo from "./SectionTwo";
 import Banner from "./Banner";
 import SectionOne from "./SectionOne";
 import { useLoaderData } from "react-router-dom";
 import ChefMaster from "./chefMaster";
 import useTitle from "../../useTitle";
-
-// import cover2 from "./assets/images/banner/banner-1.jpg";
-// import cover3 from "./assets/images/banner/banner-1.jpg";
 
 const Home = () => {
   const chefData = useLoaderData();

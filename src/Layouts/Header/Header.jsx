@@ -1,16 +1,14 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-// import { CartContext } from "../App";
-import { ShoppingCartIcon } from "@heroicons/react/24/solid";
+
 import logo from "../../assets/logo.png";
 import { AuthContext } from "../../Components/providers/AuthProvider";
-
+// import { FaHeart } from "react-icons/fa";
 const Header = () => {
   //   const [cart, setCart] = useContext(CartContext || []);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // const [loginUser, setLOginUser] = useState(null);
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
 
   const handleLogOut = () => {
     logOut()

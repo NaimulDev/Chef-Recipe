@@ -1,9 +1,10 @@
 import React from "react";
+import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white mt-10 ">
-      <div className="container mx-auto py-8 px-4 flex flex-wrap justify-between items-center">
+      <div className="container mx-auto py-4 px-4 flex flex-wrap justify-between items-center">
         <div className="flex flex-col justify-center items-center">
           <h2 className="text-xl font-bold mb-2">About Us</h2>
           <p className="text-sm text-gray-500">
@@ -19,18 +20,18 @@ const Footer = () => {
           <h2 className="text-xl font-bold mb-2">Follow Us</h2>
           <div className="flex justify-center space-x-4">
             <a href="#" className="text-white hover:text-gray-400">
-              <i className="fab fa-facebook fa-lg"></i>
+              <FaFacebook />
             </a>
             <a href="#" className="text-white hover:text-gray-400">
-              <i className="fab fa-twitter fa-lg"></i>
+              <FaTwitter />
             </a>
             <a href="#" className="text-white hover:text-gray-400">
-              <i className="fab fa-instagram fa-lg"></i>
+              <FaYoutube />
             </a>
           </div>
         </div>
       </div>
-      <div className="bg-gray-800 py-4 text-center">
+      <div className="bg-gray-900  text-center">
         <p className="text-sm text-gray-500">
           © 2025 Chef Recipe Inc. All rights reserved.
         </p>
