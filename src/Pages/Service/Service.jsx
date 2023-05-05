@@ -1,23 +1,18 @@
 import React from "react";
+import cover2 from "../../assets/images/banner/banner-1.jpg";
 
 const Service = () => {
   return (
     <div>
       <div
         style={{
-          backgroundImage: [
-            "url(../../../../src/assets/images/banner/banner-1.jpg)",
-          ],
+          backgroundImage: `url(${cover2})`,
           backgroundRepeat: "no-repeat",
-          backgroundSize: "100%",
-          height: "60vh",
+          backgroundSize: "cover",
+          height: "100vh",
           width: "100%",
         }}
-      >
-        <h2 className="page_banner-title md:text-white text-black py-10 md:py-28">
-          Home/Service
-        </h2>
-      </div>
+      ></div>
 
       <div className="bg-black md:py-20">
         <div className="md:w-[1160px] mx-auto">
