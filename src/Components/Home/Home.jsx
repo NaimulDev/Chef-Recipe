@@ -6,26 +6,19 @@ import Banner from "./Banner";
 import SectionOne from "./SectionOne";
 import { useLoaderData } from "react-router-dom";
 import ChefMaster from "./chefMaster";
+import useTitle from "../../useTitle";
 
 // import cover2 from "./assets/images/banner/banner-1.jpg";
 // import cover3 from "./assets/images/banner/banner-1.jpg";
 
 const Home = () => {
   const chefData = useLoaderData();
-  console.log(chefData);
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/chef")
-  //     .then((res) => res.json())
-  //     .then((data) => console.log(data))
-  //     .catch((error) => console.log(error));
-  // }, []);
+  useTitle("Home");
   return (
     <>
       <Banner />
       <SectionTwo />
       <SectionOne />
-
-      {/*  grid grid-cols-3 justify-center mx-auto */}
       <h1 className="text-center text-5xl font-bold">Our Master Chefs</h1>
       <div className="my-container">
         <div className=" product-container">

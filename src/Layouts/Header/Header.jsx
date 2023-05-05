@@ -3,10 +3,20 @@ import { Link, NavLink } from "react-router-dom";
 // import { CartContext } from "../App";
 import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 import logo from "../../assets/logo.png";
+import { AuthContext } from "../../Components/providers/AuthProvider";
 
 const Header = () => {
   //   const [cart, setCart] = useContext(CartContext || []);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const [loginUser, setLOginUser] = useState(null);
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
+
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch((error) => console.log(error));
+  };
   return (
     <div className=" px-4 py-2 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="relative flex items-center justify-between">
@@ -75,14 +85,20 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/login"
-              aria-label="login"
-              title="Login"
-              className={({ isActive }) => (isActive ? "active" : "default")}
-            >
-              Login
-            </NavLink>
+            {user ? (
+              <button className="" onClick={handleLogOut}>
+                Logout
+              </button>
+            ) : (
+              <NavLink
+                to="/login"
+                aria-label="login"
+                title="Login"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                Login
+              </NavLink>
+            )}
           </li>
         </ul>
         <div className="lg:hidden">

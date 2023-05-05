@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Components/providers/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import useTitle from "../../useTitle";
 
 const Login = () => {
   const [show, setShow] = useState(false);
@@ -8,7 +9,7 @@ const Login = () => {
   const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-
+  useTitle("Login");
   const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {

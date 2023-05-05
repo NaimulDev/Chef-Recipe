@@ -5,9 +5,7 @@ import "./chef-recipe.css";
 
 const ChefRecipes = () => {
   const { id } = useParams();
-
   const recipes = useLoaderData();
-  console.log(recipes);
   const chef = recipes[0];
 
   return (

@@ -2,8 +2,10 @@ import React from "react";
 import image1 from "../../assets/images/revew/abt-img1.jpg";
 import image2 from "../../assets/images/revew/abt-img2.jpg";
 import image3 from "../../assets/images/revew/abt-img3.jpg";
+import useTitle from "../../useTitle";
 
 const About = () => {
+  useTitle("About");
   return (
     <div className="flex flex-col md:flex-row items-center md:items-stretch justify-center md:justify-between px-4 md:px-12 py-8 md:py-12">
       <div className="md:w-1/2 mb-8 md:mb-0">

@@ -1,11 +1,13 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Components/providers/AuthProvider";
 import { Link } from "react-router-dom";
+import useTitle from "../../useTitle";
 
 const Signup = () => {
   const [error, setError] = useState("");
   const { createUser, googleSignIn, githubSignIn } = useContext(AuthContext);
   const [show, setShow] = useState(false);
+  useTitle("Signup");
   // email signup
   const handleSignUp = (event) => {
     event.preventDefault();

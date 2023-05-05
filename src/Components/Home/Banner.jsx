@@ -8,7 +8,7 @@ const Banner = () => {
       <img
         src={cover2}
         alt=""
-        className=" w-full h-full absolute top-0 left-0 "
+        className="object-cover w-full h-full absolute top-0 left-0 z-0"
       />
       <div className="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-70 z-10" />
       <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center z-20">
@@ -19,9 +19,7 @@ const Banner = () => {
           Discover the latest news, stories, and insights about your favorite
           topics.
         </p>
-        <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full mt-8">
-          Learn More
-        </button>
+        <button className=" mt-8 btn-primary">Learn More</button>
       </div>
     </div>
   );
