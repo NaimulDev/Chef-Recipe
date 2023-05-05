@@ -4,6 +4,7 @@ import SectionOne from "./SectionOne";
 import { useLoaderData } from "react-router-dom";
 import ChefMaster from "./chefMaster";
 import useTitle from "../../useTitle";
+import { Toaster } from "react-hot-toast";
 
 const Home = () => {
   const chefData = useLoaderData();
@@ -13,6 +14,7 @@ const Home = () => {
       <Banner />
       <SectionTwo />
       <SectionOne />
+
       <h1 className="text-center text-5xl font-bold">Our Master Chefs</h1>
       <div className="my-container">
         <div className=" product-container">

@@ -14,6 +14,7 @@ const ChefMaster = ({ chef }) => {
           src={image}
           alt=""
         />
+
         <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
           {name}
         </p>

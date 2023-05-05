@@ -1,10 +1,10 @@
 import React from "react";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Recipes from "./Recipes";
 import "./chef-recipe.css";
+import LazyLoad from "react-lazy-load";
 
 const ChefRecipes = () => {
-  const { id } = useParams();
   const recipes = useLoaderData();
   const chef = recipes[0];
 
@@ -19,11 +19,13 @@ const ChefRecipes = () => {
       </div>
       <section className="px-4 py-8 md:flex md:justify-between md:items-center bg-gray-100">
         <div className="md:w-1/2 md:mr-8">
-          <img
-            src={chef.thumbnail}
-            alt="Chef"
-            className="rounded-full w-full h-full object-cover"
-          />
+          <LazyLoad height={700}>
+            <img
+              src={chef.thumbnail}
+              alt="Chef"
+              className="rounded-full w-full h-full object-cover"
+            />
+          </LazyLoad>
         </div>
         <div className="md:w-1/2">
           <h2 className="text-2xl font-bold mb-4">Chef John Doe</h2>

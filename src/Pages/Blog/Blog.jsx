@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 import useTitle from "../../useTitle";
+import ReactToPrint from "react-to-print";
 
 const Blog = () => {
+  const ref = useRef();
   useTitle("Blog");
   return (
     <div className="w-10/12 mx-auto mt-5">
       <h2 className="text-2xl text-center font-bold">Blog page</h2>
-      <div className="card w-full">
+      <div ref={ref} className="card w-full">
         <div className="card-body">
           <div className="mb-4 bg-base-200 shadow-xl p-5 rounded-md">
             <h2 className="text-2xl font-semibold mb-4">
@@ -66,6 +68,12 @@ const Blog = () => {
             </p>
           </div>
         </div>
+      </div>
+      <div className="text-center ">
+        <ReactToPrint
+          trigger={() => <button className=" btn-primary">Print</button>}
+          content={() => ref.current}
+        />
       </div>
     </div>
   );
