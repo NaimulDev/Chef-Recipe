@@ -9,12 +9,12 @@ const Service = () => {
           backgroundImage: `url(${cover2})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          height: "100vh",
+          height: "80vh",
           width: "100%",
         }}
       ></div>
 
-      <div className="bg-black md:py-20">
+      <div className="bg-black md:pb-20">
         <div className="md:w-[1160px] mx-auto">
           <div className="bg-black md:w-96 mx-auto text-center mb-10 ">
             <p className="contact-title italic">Starter Menu</p>

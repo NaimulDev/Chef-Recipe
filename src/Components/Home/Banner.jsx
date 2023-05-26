@@ -7,24 +7,24 @@ import cover1 from "../../assets/images/banner/banner-1.jpg";
 const Banner = () => {
   const [sliderRef] = useKeenSlider();
   return (
-    <div className="relative h-screen">
+    <div className="relative">
       <div ref={sliderRef} className="keen-slider">
         <div
           className="keen-slider__slide number-slide1"
           style={{
-            backgroundImage: `url(${cover2})`,
+            backgroundImage: `url(${cover1})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            height: "100vh",
+            height: "80vh",
             width: "100%",
           }}
         >
           <div className="md:w-8/12 w-full mx-auto">
             <div className="py-8 md:py-5 md:px-8 bg-banner relative md:top-1/2 md:translate-y-1/4">
-              <h2 className="text-3xl text-center md:text-6xl font-bold text-white pb-5">
+              <h2 className="text-3xl text-center md:text-6xl font-bold text-cyan-800 pb-5">
                 Master Chef
               </h2>
-              <p className="text-white text-center text-lg">
+              <p className="text-cyan-500 text-center text-lg">
                 The height quality, Fresh Products paired with excellent
                 craftsmanship in cooking. Le Chef was established in 1988 and
                 has received the highly acclaimed michelin star in 2001.
